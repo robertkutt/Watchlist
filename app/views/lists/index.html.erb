@@ -3,6 +3,11 @@
 <%= link_to "Add a new List", new_list_path %>
 <ul>
   <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list)%></li>
+    <li><%= link_to list.name, list_path(list)%>
+      <%= link_to "Delete",
+            list_path(list),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+    </li>
   <% end %>
 </ul>
