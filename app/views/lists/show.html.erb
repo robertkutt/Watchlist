@@ -1,12 +1,34 @@
 <h1>Display Details about the list</h1>
 
-<%= @list.name %>
+<h2 class="bookmarkName"><%= @list.name %></h2>
+<div class="container">
+<div class="loop">
+  <% @list.movies.each do |movie|%>
+    <div>
+      <li>
+        <p>Name: <%= movie.title %></p>
+    </li>
+    <li>
+      <p>Overview: <%= movie.overview %></p>
+    </li>
+    <li>
+      <p>Your Comment: <%= Bookmark.find_by(movie_id: movie, list_id: @list).comment %></p>
+    </li>
+    <li>
+      <div>
+        <%= image_tag movie.poster_url, class: "moviePoster" %>
+      </div>
+    </li>
+<% end %>
 
-<% @list.movies.each do |movie|%>
-  <%= movie.title %>
-  <%= movie.overview %>
-  <%= image_tag movie.poster_url %>
-  <% end %>
-
-<%= link_to "Add Movies to your list", new_list_bookmark_path(@list)%>
-<%= link_to "Go Back", lists_path(@list) %>
+</div>
+  <div class="linksDisplay">
+    <li>
+      <%= link_to "Add Movies to your list", new_list_bookmark_path(@list)%>
+    </li>
+  <li>
+    <%= link_to "Go Back", lists_path(@list) %>
+  </li>
+</div>
+</div>
+</div>

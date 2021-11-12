@@ -1,0 +1,34 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.firstHeader {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.card-category {
+  display: flex;
+  height: 500px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  background-position-y: center;
+  margin: 10px;
+}
+
+.homeButton {
+  display: flex;
+  padding: 15px;
+  background-color: bisque;
+  width: 100px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.homeButton:hover {
+  background-color: white;
+}
